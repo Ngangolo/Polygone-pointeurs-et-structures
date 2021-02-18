@@ -53,10 +53,10 @@
       liste= Polygone_Vide();
    	  for(i=0; i<Nb_Pts; i++)
    	    {              
-   	       polg=( Polygone*)malloc(sizeof( Polygone));
-   	       polg->Pt=Saisie_Point();
-   	       polg->Suivant=liste;
-   	       liste= polg;
+   	         polg=( Polygone*)malloc(sizeof( Polygone));
+   	         polg->Pt=Saisie_Point();
+   	         polg->Suivant=liste;
+   	         liste= polg;
          }
        return  liste;
    }
@@ -68,7 +68,7 @@
       tmp = Poly;
       printf("(");
       if(tmp == NULL)
-      printf("LISTE VIDE!!!!!!");
+      printf("LISTE VIDE!!");
       while(tmp != NULL)
        {
         Affiche_Point(*(tmp->Pt));
@@ -143,7 +143,7 @@ polygone_t Inserer_Fin(polygone_t Poly , point_t * Pt)
 	}    	
 }
 
-
+//fonction pour vider un polygone
  void Vider_Polygone(polygone_t  Poly)
   {
 		polygone_t  tmp ;
@@ -166,7 +166,7 @@ polygone_t Inserer_Fin(polygone_t Poly , point_t * Pt)
     return sqrt(pow((Pt2->Y - Pt1->Y),2) + pow((Pt2->X - Pt1->X),2));
 }
  	 
-
+//fonction qui retourne le perimetre d'un polygone
  double Perimetre(polygone_t* Poly)
  {
  	double res=0;
@@ -182,7 +182,7 @@ polygone_t Inserer_Fin(polygone_t Poly , point_t * Pt)
        return res;
  }
  
-
+//verifier si un point appartient à un segment
  int Point_in_Segment(point_t* Pt1 , point_t* Pt2 , point_t* Pt3)
  {
  		if( Distance( Pt2, Pt3)==Distance( Pt2, Pt1)+Distance( Pt1, Pt3)) 
@@ -192,7 +192,7 @@ polygone_t Inserer_Fin(polygone_t Poly , point_t * Pt)
  }
  
    
-   
+   //verifier si un point appartient à un perimetre
  int Point_in_Perimetre_Polygone(point_t* Pt1 , polygone_t Poly)
  {
     int c;
